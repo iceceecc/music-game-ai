@@ -1,28 +1,41 @@
 <!DOCTYPE html>
-<html lang="zh-CN"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
-<title>CityPop Tap — 音乐互动</title>
-<link rel="stylesheet" href="style.css"/></head>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+  <title>NeonSwipe — 音乐滑动玩具</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
 <body class="theme-neon">
-<div id="ui"><div class="row topbar">
-  <div class="brand">CityPop Tap</div>
-  <div class="controls">
-    <button id="startBtn" class="pill">开始</button>
-    <button id="stopBtn" class="pill">停止</button>
-    <button id="autoBtn" class="pill">自动演奏</button>
-    <select id="themeSel" class="pill">
-      <option value="neon">冷霓虹</option><option value="aqua">深海蓝</option><option value="violet">午夜紫</option><option value="mint">极光薄荷</option>
-    </select>
-    <select id="songSel" class="pill">
-      <option value="citypop">City Pop</option><option value="synthwave">Synthwave</option><option value="lofi">Lo‑Fi</option>
-    </select>
-    <label class="pill slider">速度 <input id="tempo" type="range" min="60" max="160" value="110"><span id="tempoVal">110</span></label>
-    <label class="pill slider">视觉强度 <input id="vis" type="range" min="0" max="100" value="60"></label>
-    <label class="pill slider">回声 <input id="fxDelay" type="range" min="0" max="90" value="30"></label>
-    <label class="pill slider">混响 <input id="fxReverb" type="range" min="0" max="90" value="20"></label>
+  <div id="ui" class="ui">
+    <div class="left">
+      <div class="brand">NeonSwipe</div>
+      <div class="hint">按住并在网格上<strong>滑动</strong>来演奏</div>
+    </div>
+    <div class="right">
+      <select id="themeSel" class="pill">
+        <option value="neon">冷霓虹</option>
+        <option value="aqua">深海蓝</option>
+        <option value="violet">午夜紫</option>
+        <option value="mint">极光薄荷</option>
+      </select>
+      <select id="songSel" class="pill">
+        <option value="citypop">City Pop</option>
+        <option value="synthwave">Synthwave</option>
+        <option value="lofi">Lo-Fi</option>
+      </select>
+      <button id="autoBtn" class="pill">自动</button>
+      <label class="pill slider">速度 <input id="tempo" type="range" min="70" max="150" value="110"><span id="tempoVal">110</span></label>
+      <label class="pill slider">发光 <input id="glow" type="range" min="0" max="100" value="70"></label>
+      <label class="pill slider">混响 <input id="reverb" type="range" min="0" max="90" value="40"></label>
+    </div>
   </div>
-</div></div>
-<canvas id="bg"></canvas>
-<div id="grid" class="grid"></div>
-<footer class="foot"><div>玩法：点击/触摸方块发声；开启“自动演奏”可随机生成旋律与节奏。支持手机与电脑。</div>
-<div>美术：冷色调主题 + 霓虹粒子；可切换不同配色与曲风。</div></footer>
-<script src="main.js"></script></body></html>
+
+  <canvas id="bg"></canvas>
+  <div id="grid" class="grid"></div>
+  <div id="floating"></div>
+
+  <footer class="foot">美术风格：冷色霓虹 + 粒子尾迹 + 水波涟漪。玩法：按住滑动即可连续发声（带滑音）。</footer>
+  <script src="main.js"></script>
+</body>
+</html>
